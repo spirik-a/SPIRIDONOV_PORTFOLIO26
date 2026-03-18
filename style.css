@@ -1,0 +1,131 @@
+/* ОБНУЛЕННЯ ТА БАЗОВІ НАЛАШТУВАННЯ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b0b0b; /* Глибокий чорний фон */
+  overflow-x: hidden;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ЛОАДЕР (ЕКРАН ЗАВАНТАЖЕННЯ) */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #0b0b0b;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  z-index: 10000;
+  transition: opacity 0.8s ease;
+}
+
+.loader-content {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+#percent {
+  color: #00ffcc;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.progress-bg {
+  width: 100%;
+  height: 2px;
+  background: #1a1a1a;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #00ffcc;
+  transition: width 0.3s;
+}
+
+/* QUICK TIP (СТАТИЧНИЙ НАПИС УГОРІ) */
+.static-tip {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 20px; /* Твій запит: 20px */
+  color: #a8a4a4; /* Твій запит: сірий колір */
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ГОЛОВНА КОЛОНКА ПОРТФОЛІО */
+.main-column {
+  display: block;
+  width: 100%;
+  max-width: 1000px; /* Ширина як у Figma макеті */
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.main-column img,
+.main-column video,
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* БЛОК КОНТАКТНИХ ПОСИЛАНЬ (ПІД КАРТИНКОЮ 09) */
+.contact-links {
+  text-align: center;
+  padding: 60px 0;
+  background: #0b0b0b;
+}
+
+.contact-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #00ffcc; /* Фірмовий бірюзовий при наведенні */
+}
+
+.divider {
+  color: #333;
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+/* КНОПКА "НАГОРУ" */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #00ffcc;
+  color: #0b0b0b;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  display: none; /* З'являється через JS при скролі */
+  z-index: 999;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  transition: transform 0.2s ease;
+}
+
+#back-to-top:hover {
+  transform: scale(1.1);
+}
