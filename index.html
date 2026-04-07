@@ -6,30 +6,82 @@
     <title>ANDREW Spiridonov | Design Portfolio</title>
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .fast-nav {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 60px;
+        box-sizing: border-box;
+        /* Градієнт Apple + Бордер 2px у гаммі */
+        background: linear-gradient(180deg, #2c2c2e 0%, #1c1c1e 100%);
+        border: 2px solid #3a3a3c; 
+        border-radius: 4px; /* Легке закруглення для м'якості ліній */
+        margin-bottom: 15px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        position: relative;
+        z-index: 100;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .fast-nav span {
+        color: #8e8e93;
+        font-size: 11px;
+        margin-right: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        font-weight: 500;
+      }
+
+      .fast-nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        margin-left: 30px;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .fast-nav a:hover {
+        color: #ffcc00;
+        transform: translateY(-1px);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <body class="loading">
     <div id="loading-screen">
       <div class="loader-content">
-        <p style="font-size: 14px; margin-bottom: 15px; color: #888">
-          High-quality assets are loading...
-        </p>
+        <p style="font-size: 14px; margin-bottom: 15px; color: #888">High-quality assets are loading...</p>
         <span id="percent">0%</span>
         <div class="progress-bg"><div id="progress-bar"></div></div>
       </div>
     </div>
-
+    
     <main class="main-column">
       <div class="static-tip">
-        Quick tip: To ensure you see all details in high quality, please allow a
-        few moments for the page to load...
+        Quick tip: To ensure you see all details in high quality, please allow a few moments for the page to load...
       </div>
+
+      <nav class="fast-nav">
+        <span>Fast scroll to:</span>
+        <a href="#amazon-case">AMAZON</a>
+        <a href="#boomerang-case" style="color: #ffcc00; border: 1px solid #ffcc00; padding: 6px 12px; border-radius: 6px;">GAMBLING</a>
+      </nav>
 
       <img src="img/00 COVER_FN.png" alt="" />
       <img src="img/01 INTRO.gif" alt="" />
       <img src="img/02_Services & Contacts.png" alt="" />
       <img src="img/03_0 socialHead.png" alt="" />
       <img src="img/03_1 MERGED.png" alt="" />
-
+      
       <div class="video-wrapper">
         <video autoplay loop muted playsinline>
           <source src="img/03_2 Case_SocialMedia.mp4" type="video/mp4" />
@@ -40,106 +92,48 @@
       <img src="img/05_Case_3_CVIT_DIVAN.png" alt="" />
       <img src="img/06_Case4_FAMILYNEST.png" alt="" />
       <img src="img/07_0 DATING_SITE.png" alt="" />
-      <img src="img/07_5Case_AMAZON.png" alt="" />
-      <img src="img/07_6Case_AMAZON_HOUCE_CONFORT.png" alt="" />
+
+      <div id="amazon-case" style="scroll-margin-top: 100px;">
+        <img src="img/07_5Case_AMAZON.png" alt="" />
+        <img src="img/07_6Case_AMAZON_HOUCE_CONFORT.png" alt="" />
+      </div>
+
       <img src="img/08_Case_6_PyronixGames.png" alt="" />
       <img src="img/08_5_FRAME_COVERS.png" alt="" />
 
-      <div
-        class="email-case-section"
-        style="
-          width: 100%;
-          max-width: 1200px;
-          margin: 60px auto;
-          padding: 0 20px;
-          box-sizing: border-box;
-          text-align: center;
-        "
-      >
-        <div
-          class="email-description-text"
-          style="
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            font-family: sans-serif;
-          "
-        >
-          <h2
-            style="
-              color: #ffcc00;
-              margin-bottom: 20px;
-              font-size: 28px;
-              text-transform: uppercase;
-              line-height: 1.2;
-              font-weight: bold;
-            "
-          >
-            Кейс: Адаптивний Email-макет для Boomerang Casino
-          </h2>
-          <p
-            style="
-              line-height: 1.7;
-              font-size: 18px;
-              color: #ececec;
-              margin-bottom: 20px;
-            "
-          >
-            Це приклад дизайну та верстки повної рекламної емейл-розсилки. Макет
-            розроблено з урахуванням сучасних стандартів email-маркетингу: чітка
-            ієрархія, яскраві банери та продумана структура. Ви можете
-            переглянути інтерактивну версію за посиланням:
-            <a
-              href="https://www.figma.com/proto/Xx6iP4fDgWOOg9SPpCaxyQ/%D0%B2%D0%B0%D1%80%D1%96%D0%B0%D0%BD%D1%82-%D0%BF%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BE%D1%97-%D1%80%D0%BE%D0%B7%D1%81%D0%B8%D0%BB%D0%BA%D0%B8?node-id=0-1&t=faDi0D4lAbMZtWVy-1"
-              target="_blank"
-              style="color: #ffcc00; text-decoration: underline"
-              >Prototype in Figma</a
-            >.
-          </p>
-
-          <p
-            style="font-style: italic; font-size: 14px; color: #888; margin-top: 30px; border-top: 1px solid #333; pt-15px; padding-top: 15px;"
-          >
-            Демонстрація нижче містить повний запис прокрутки довгого листа.
-            Дякую за ваше терпіння та розуміння під час перегляду деталей
-            макета.
-          </p>
-        </div>
-
-        <div class="video-container" style="width: 75%; margin: 0 auto">
-          <video
-            autoplay
-            loop
-            muted
-            playsinline
-            style="
-              width: 100%;
-              height: auto;
-              border-radius: 12px;
-              border: 1px solid #333;
-              box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            "
-          >
-            <source src="img/BOOMERANGFIN.mp4" type="video/mp4" />
-            Ваш браузер не підтримує відео.
-          </video>
-        </div>
+      <div id="boomerang-case" class="email-case-section" style="scroll-margin-top: 100px; width: 100%; max-width: 1200px; margin: 60px auto; padding: 20px; box-sizing: border-box; text-align: center;">
+          <div class="email-description-text" style="max-width: 800px; margin: 0 auto 40px auto; font-family: sans-serif;">
+              <h2 style="color: #ffcc00; margin-bottom: 20px; font-size: 28px; text-transform: uppercase; font-weight: bold;">
+                  КЕЙС: АДАПТИВНИЙ EMAIL-МАКЕТ ДЛЯ BOOMERANG CASINO
+              </h2>
+              <p style="line-height: 1.7; font-size: 18px; color: #ececec; margin-bottom: 25px;">
+                Це приклад дизайну та верстки повної рекламної емейл-розсилки. Ви можете переглянути інтерактивну версію у Figma: 
+                <a href="https://www.figma.com/proto/Xx6iP4fDgWOOg9SPpCaxyQ/%D0%B2%D0%B0%D1%80%D1%96%D0%B0%D0%BD%D1%82-%D0%BF%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BE%D1%97-%D1%80%D0%BE%D0%B7%D1%81%D0%B8%D0%BB%D0%BA%D0%B8?node-id=0-1&p=f&t=6TUykLDZSAIkF8LS-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3" 
+                   target="_blank" style="color: #ffcc00; text-decoration: underline;">Prototype Link</a>.
+              </p>
+              <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 12px; border-left: 4px solid #ffcc00; text-align: left;">
+                  <p style="font-size: 15px; color: #ccc; margin: 0;">
+                      <strong>Примітка:</strong> Через нестабільність мережі підготовлено відеодемонстрацію скролінгу довгого листа. Дякую за увагу до деталей.
+                  </p>
+              </div>
+          </div>
+          <div class="video-container" style="width: 75%; margin: 0 auto;">
+              <video autoplay loop muted playsinline style="width: 100%; border-radius: 12px; border: 1px solid #333;">
+                  <source src="img/BOOMERANGFIN.mp4" type="video/mp4" />
+              </video>
+          </div>
       </div>
 
       <img src="img/09_1_FIN_CONTACTS.png" alt="Contacts Andrew Spiridonov" />
 
       <div class="contact-links">
-        <a
-          href="https://www.linkedin.com/in/spirik-%D0%B0%D0%BD%D0%B4%D1%80%D1%96%D0%B9-%D1%81%D0%BF%D1%96%D1%80%D1%96%D0%B4%D0%BE%D0%BD%D0%BE%D0%B2-a1844b151/"
-          target="_blank"
-          >LINKEDIN</a
-        >
+        <a href="https://www.linkedin.com/in/spirik-..." target="_blank">LINKEDIN</a>
         <span class="divider">|</span>
         <a href="https://t.me/spirik_a" target="_blank">TELEGRAM</a>
       </div>
     </main>
 
     <button id="back-to-top">↑</button>
-
     <script src="script.js"></script>
   </body>
 </html>
