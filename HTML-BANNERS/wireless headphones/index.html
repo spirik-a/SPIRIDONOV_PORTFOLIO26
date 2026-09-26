@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 Banner 300x250 - Space Gray</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #222;
+      }
+      .banner {
+        position: relative;
+        width: 300px;
+        height: 250px;
+        /* Преміальний сірий металік у стилі Space Gray */
+        background: linear-gradient(135deg, #d8d8d6, #b5b5b3, #989896);
+        overflow: hidden;
+        font-family: "Segoe UI", Arial, sans-serif;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .logo {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        color: #222222; /* Темний колір для контрасту на світлому фоні */
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        z-index: 3;
+        opacity: 0;
+        animation: fadeInDown 0.6s 0.2s forwards;
+      }
+
+      .product-img {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        width: 200px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: scale(0.8);
+        animation: zoomInProduct 0.8s 0.4s forwards;
+        z-index: 1;
+      }
+
+      .title {
+        position: absolute;
+        top: 175px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #1a1a1a; /* Темний текст замість білого */
+        font-size: 15px;
+        font-weight: 700;
+        z-index: 3;
+        opacity: 0;
+        animation: fadeIn 0.6s 1s forwards;
+      }
+
+      .cta-btn {
+        position: absolute;
+        bottom: 12px;
+        left: 50px;
+        width: 200px;
+        height: 34px;
+        background: #0071e3; /* Бріджовий Apple-синій для кнопки */
+        color: #ffffff;
+        text-align: center;
+        line-height: 34px;
+        font-weight: bold;
+        font-size: 13px;
+        border-radius: 17px;
+        z-index: 3;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUpBtn 0.6s 1.5s forwards, pulse 2s 2.2s infinite;
+      }
+
+      @keyframes fadeInDown {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes zoomInProduct {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideUpBtn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.04);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+
+    <script>
+      var clickTag = "https://example.com";
+    </script>
+  </head>
+  <body>
+    <div class="banner" id="banner-exit">
+      <div class="logo">AUDIO_TECH</div>
+      <img src="headphone.jpg" alt="Wireless Headphones" class="product-img" />
+      <div class="title">Звук нового покоління</div>
+      <div class="cta-btn">КУПИТИ ЗІ ЗНИЖКОЮ</div>
+    </div>
+
+    <script>
+      document
+        .getElementById("banner-exit")
+        .addEventListener("click", function () {
+          window.open(window.clickTag, "_blank");
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+Як оформити та викласти у портфоліо на GitHub:Вбудувати прямо на сайт через <iframe>Створи папку html5-demo на своєму GitHub Pages і завантаж туди ці файли. На головній сторінці портфоліо зроби блок:   HTML<iframe src="./html5-demo/index.html" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+Додати короткий описовий картридж (Case Study):Технології: HTML5, CSS3 Keyframes, JS (clickTag Integration), Google Web Designer Specs.   Оптимізація: Загальний об'єм ZIP-архіву — < 80 KB (при нормі 150 KB).AI Workflow: Фон згенеровано в Midjourney + Upscale/Clean up.

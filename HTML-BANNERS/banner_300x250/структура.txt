@@ -1,0 +1,6 @@
+/banner_300x250/
+├── index.html   (з вбудованими стилями <style>)
+├── script.js    (логіка кліку та clickTag)
+└── assets/
+    ├── bg_ai.jpg
+    └── logo.png
