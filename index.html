@@ -60,34 +60,102 @@
       }
 
       /* ========================================================
+         Стилі для блоку HTML5 Банерів
+         ======================================================== */
+      .html5-banners-section {
+        width: 100%;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        text-align: center;
+        background: #111113;
+        border: 1px solid #2a2a2d;
+        border-radius: 8px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+      }
+
+      .html5-banners-header h2 {
+        color: #00f0ff;
+        font-size: 26px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .html5-banners-header p {
+        color: #aaa;
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
+      .banners-grid {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .banner-card {
+        background: #1c1c1e;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #3a3a3c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .banner-card iframe {
+        border: none;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .banner-title {
+        color: #fff;
+        margin-top: 15px;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* ========================================================
          АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ (ЕКРАНИ ДО 768px)
          ======================================================== */
       @media (max-width: 768px) {
         .fast-nav {
-          height: auto; /* Прибираємо фіксовану висоту для зручного перенесення */
-          padding: 15px; /* Зменшуємо внутрішні відступи рамки */
-          justify-content: center; /* Центруємо елементи на екрані телефону */
-          flex-wrap: wrap; /* Дозволяємо кнопкам переноситися на новий рядок */
-          gap: 12px; /* Задаємо однакову відстань між усіма кнопками */
+          height: auto;
+          padding: 15px;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 12px;
         }
 
         .fast-nav span {
-          display: none; /* Сховуємо напис "Fast scroll to:" на телефонах */
+          display: none;
         }
 
         .fast-nav a {
-          margin-left: 0 !important; /* Скидаємо фіксований відступ зліва */
-          font-size: 11px; /* Трохи зменшуємо розмір шрифту */
+          margin-left: 0 !important;
+          font-size: 11px;
           letter-spacing: 0.2px;
         }
 
         .fast-nav a[style*="border"] {
-          padding: 6px 10px !important; /* Робимо плашку GAMBLING компактнішою */
+          padding: 6px 10px !important;
         }
 
         .fast-nav a.secret-btn {
-          padding: 6px 10px !important; /* Робимо червону кнопку компактнішою */
+          padding: 6px 10px !important;
           margin-left: 0 !important;
+        }
+
+        .banners-grid {
+          gap: 20px;
         }
       }
 
@@ -136,6 +204,7 @@
 
       <nav class="fast-nav">
         <span>Fast scroll to:</span>
+        <a href="#html5-case" style="color: #00f0ff">HTML5 BANNERS</a>
         <a href="#social-case">SOCIAL ADS</a>
         <a href="#amazon-case">AMAZON</a>
         <a
@@ -168,6 +237,40 @@
       <img src="img/01 INTRO.gif" alt="" draggable="false" />
       <img src="img/02_Services & Contacts.png" alt="" draggable="false" />
 
+      <div
+        id="html5-case"
+        class="html5-banners-section"
+        style="scroll-margin-top: 100px"
+      >
+        <div class="html5-banners-header">
+          <h2>HTML5 Animated Banners (Google Web Designer)</h2>
+          <p>
+            Lightweight CSS3/JS Animations • Optimized under 150 KB • Google Ads
+            / DV360 ClickTag Ready
+          </p>
+        </div>
+        <div class="banners-grid">
+          <div class="banner-card">
+            <iframe
+              src="HTML-BANNERS/banner_300x250/index.html"
+              width="300"
+              height="250"
+              scrolling="no"
+            ></iframe>
+            <span class="banner-title">300x250 • AI Creatives (~23 KB)</span>
+          </div>
+          <div class="banner-card">
+            <iframe
+              src="HTML-BANNERS/wireless headphones/index.html"
+              width="300"
+              height="250"
+              scrolling="no"
+            ></iframe>
+            <span class="banner-title">300x250 • Wireless Headphones</span>
+          </div>
+        </div>
+      </div>
+
       <div id="social-case" style="scroll-margin-top: 100px">
         <img src="img/03_0 socialHead.png" alt="" draggable="false" />
         <img src="img/03_1 MERGED.png" alt="" draggable="false" />
@@ -186,8 +289,6 @@
       />
 
       <img src="img/04_Case_2_LUXERY_LUNA.png" alt="" draggable="false" />
-      <!-- <img src="img/POD_OFFLINE_A3.jpg" alt="" />
-      <img src="img/POD_ONLINE1.jpg" alt="" /> -->
       <div style="margin-top: -200px">
         <img src="img/POD_UNITED.jpg" alt="" />
       </div>
