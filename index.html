@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="style.css" />
     <style>
       .fast-nav {
-        width: 100%;
+width: calc(100% + 6px); /* Збільшено ширину на 6px загалом (по 3px з кожного боку) */
+  margin-left: -3px;        /* Висуваємо ліворуч на 3px */
+  margin-right: -3px;       /* Висуваємо праворуч на 3px */
         height: 80px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start; /* Вирівнювання елементів від початку */
         align-items: center;
-        padding: 0 60px;
+        gap: 15px; /* Проміжок між всіма елементами навігації */
+        padding: 0 40px;
         box-sizing: border-box;
         background: linear-gradient(180deg, #2c2c2e 0%, #1c1c1e 100%);
         border: 2px solid #3a3a3c;
@@ -29,7 +32,7 @@
       .fast-nav span {
         color: #8e8e93;
         font-size: 11px;
-        margin-right: 25px;
+        margin-right: 5px;
         text-transform: uppercase;
         letter-spacing: 1.2px;
         font-weight: 500;
@@ -40,7 +43,7 @@
         text-decoration: none;
         font-size: 13px;
         font-weight: 600;
-        margin-left: 30px;
+        margin-left: 0;
         transition: all 0.2s ease;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -72,7 +75,8 @@
         background: #111113;
         border: 1px solid #2a2a2d;
         border-radius: 8px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
       }
 
       .html5-banners-header h2 {
@@ -233,7 +237,7 @@
 
       <nav class="fast-nav">
         <span>Fast scroll to:</span>
-        <a href="#html5-case" style="color: #00f0ff;">HTML5 BANNERS</a>
+        <a href="#html5-case" style="color: #00f0ff">HTML5 BANNERS</a>
         <a href="#social-case">SOCIAL ADS</a>
         <a href="#amazon-case">AMAZON</a>
         <a
@@ -247,6 +251,20 @@
           >GAMBLING</a
         >
         <a
+          href="free_video.html"
+          target="_blank"
+          class="secret-btn"
+          title="NEED PASSWORD"
+          style="
+            color: #ffffff;
+            background-color: #ff3b30;
+            padding: 6px 12px;
+            border-radius: 6px;
+          "
+          >FREE VIDEO/MOTION NO PROTECT</a
+        >
+
+        <a
           href="topSecret.html"
           target="_blank"
           class="secret-btn"
@@ -256,7 +274,6 @@
             background-color: #ff3b30;
             padding: 6px 12px;
             border-radius: 6px;
-            margin-left: 15px;
           "
           >VIDEO/MOTION © PROTECTION</a
         >
@@ -266,20 +283,40 @@
       <img src="img/01 INTRO.gif" alt="" draggable="false" />
       <img src="img/02_Services & Contacts.png" alt="" draggable="false" />
 
-      <!-- БЛОК З ЖИВИМИ HTML5/GWD БАНЕРАМИ -->
-      <div id="html5-case" class="html5-banners-section" style="scroll-margin-top: 100px;">
+      <div
+        id="html5-case"
+        class="html5-banners-section"
+        style="scroll-margin-top: 100px"
+      >
         <div class="html5-banners-header">
           <h2>HTML5 Animated Banners (Google Web Designer)</h2>
-          <p>Lightweight CSS3/JS Animations • Optimized under 150 KB • Google Ads / DV360 ClickTag Ready</p>
-          <button class="restart-btn" onclick="restartBanners()">▶ Play / Restart Animation</button>
+          <p>
+            Lightweight CSS3/JS Animations • Optimized under 150 KB • Google Ads
+            / DV360 ClickTag Ready
+          </p>
+          <button class="restart-btn" onclick="restartBanners()">
+            ▶ Play / Restart Animation
+          </button>
         </div>
         <div class="banners-grid">
           <div class="banner-card">
-            <iframe id="banner1" src="HTML-BANNERS/banner_300x250/index.html" width="300" height="250" scrolling="no"></iframe>
+            <iframe
+              id="banner1"
+              src="HTML-BANNERS/banner_300x250/index.html"
+              width="300"
+              height="250"
+              scrolling="no"
+            ></iframe>
             <span class="banner-title">300x250 • AI Creatives (~23 KB)</span>
           </div>
           <div class="banner-card">
-            <iframe id="banner2" src="HTML-BANNERS/wireless headphones/index.html" width="300" height="250" scrolling="no"></iframe>
+            <iframe
+              id="banner2"
+              src="HTML-BANNERS/wireless headphones/index.html"
+              width="300"
+              height="250"
+              scrolling="no"
+            ></iframe>
             <span class="banner-title">300x250 • Wireless Headphones</span>
           </div>
         </div>
@@ -303,8 +340,6 @@
       />
 
       <img src="img/04_Case_2_LUXERY_LUNA.png" alt="" draggable="false" />
-      <!-- <img src="img/POD_OFFLINE_A3.jpg" alt="" />
-      <img src="img/POD_ONLINE1.jpg" alt="" /> -->
       <div style="margin-top: -200px">
         <img src="img/POD_UNITED.jpg" alt="" />
       </div>
@@ -427,11 +462,11 @@
     </main>
 
     <button id="back-to-top">↑</button>
-    
+
     <script>
       function restartBanners() {
-        const b1 = document.getElementById('banner1');
-        const b2 = document.getElementById('banner2');
+        const b1 = document.getElementById("banner1");
+        const b2 = document.getElementById("banner2");
         if (b1) b1.src = b1.src;
         if (b2) b2.src = b2.src;
       }
