@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>СПІРІДОНОВ АНДРІЙ</title>
+    <style>
+      body {
+        background-color: #0d0e12;
+        color: #ffffff;
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .main-header {
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(180deg, #1a1c24 0%, #0d0e12 100%);
+        width: 100%;
+        border-bottom: 1px solid #2d2f36;
+      }
+
+      .main-header h1 {
+        font-size: 22px;
+        letter-spacing: 2px;
+        color: #7c4dff;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 90%;
+        padding: 30px 0;
+      }
+
+      .case-block {
+        margin-bottom: 60px;
+        background: #16181d;
+        border-radius: 24px;
+        padding: 25px;
+        border: 1px solid #2d2f36;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .variant-title {
+        color: #7c4dff;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      .visual-content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        max-width: 360px;
+        width: 100%;
+        border: 1px solid #333;
+        background: #000;
+      }
+
+      /* Стилі для інтерактивної заставки поверх першого відео */
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(13, 14, 18, 0.85);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        cursor: pointer;
+        transition: opacity 0.4s ease;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .play-btn-custom {
+        background: #7c4dff;
+        color: #ffffff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(124, 77, 255, 0.4);
+        transition: background 0.2s, transform 0.2s;
+      }
+
+      .play-btn-custom:hover {
+        background: #6c3ce9;
+        transform: scale(1.05);
+      }
+
+      .overlay-text {
+        font-size: 12px;
+        color: #b0b3bc;
+        margin-top: 12px;
+        line-height: 1.4;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        -webkit-user-drag: none;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+        display: block;
+        pointer-events: auto; /* Дозволяє клікати на кнопки плеєра */
+        -webkit-user-drag: none;
+      }
+
+      footer {
+        padding: 30px;
+        color: #4a4d55;
+        font-size: 11px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body oncontextmenu="return false;">
+    <div class="main-header">
+      <h1>СПІРІДОНОВ АНДРІЙ</h1>
+    </div>
+    <!-- strt frst video -->
+    <div class="container">
+      <div class="case-block">
+        <h6>ОСОБИСТА ПРЕЗЕНТАЦІЯ</h6>
+
+        <div class="visual-content video-container" id="first-video-container">
+          <!-- Інтерактивна заставка -->
+          <div class="video-overlay" id="videoOverlay">
+            <button class="play-btn-custom">Увімкнути звук / Дивитися</button>
+            <span class="overlay-text"
+              >Натисніть для перегляду презентації</span
+            >
+          </div>
+
+          <video
+            loop
+            playsinline
+            disablePictureInPicture
+            controls
+            controlsList="nodownload"
+          >
+            <source src="vd/OWN_PRESENTATION.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div class="case-block">
+        <div class="variant-title">КЕРУВАННЯ ПЛЕЄРОМ ДОСТУПНЕ ВНИЗУ ВІДЕО</div>
+        <h6>ТАК ЯК ПЕРША СЦЕНА ЧОРНА, ЩОБ ПОБАЧИТИ НАТИСНІТЬ ПРОГРАВАТИ</h6>
+
+        <div class="visual-content video-container">
+          <video
+            playsinline
+            disablePictureInPicture
+            controls
+            controlsList="nodownload"
+          >
+            <source src="vd/1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <!-- end frst video -->
+
+    <!-- str sec video -->
+    <div class="container">
+      <div class="case-block">
+        <div class="variant-title">КЕРУВАННЯ ПЛЕЄРОМ ДОСТУПНЕ ВНИЗУ ВІДЕО</div>
+
+        <div class="visual-content video-container">
+          <video
+            playsinline
+            disablePictureInPicture
+            controls
+            controlsList="nodownload"
+          >
+            <source src="./vd/6.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <!-- LAST VIDEO -->
+    <div class="container">
+      <div class="case-block">
+        <span class="description"
+          >НЕВЕЛИКЕ REELS ВІДЕО ДЛЯ ПРЕЗЕНТАЦІЇ ВЕЧОРА В СОЦ. МЕРЕЖАХ</span
+        ><br /><br />
+        <div class="variant-title">КЕРУВАННЯ ПЛЕЄРОМ ДОСТУПНЕ ВНИЗУ ВІДЕО</div>
+
+        <div class="visual-content video-container">
+          <video
+            playsinline
+            disablePictureInPicture
+            controls
+            controlsList="nodownload"
+          >
+            <source src="vd/TTH1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="case-block">
+        <span class="description" style="color: #ee3413"
+          >НЕВЕЛИКЕ REELS ВІДЕО ДЛЯ ПРЕЗЕНТАЦІЇ АТМОСФЕРИ ЗАКЛАДУ В СОЦ.
+          МЕРЕЖАХ</span
+        ><br /><br />
+        <div class="variant-title">КЕРУВАННЯ ПЛЕЄРОМ ДОСТУПНЕ ВНИЗУ ВІДЕО</div>
+
+        <div class="visual-content video-container">
+          <video
+            playsinline
+            disablePictureInPicture
+            controls
+            controlsList="nodownload"
+          >
+            <source src="vd/TTH2.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <!-- end sec video -->
+
+    <footer>&copy; 2026 Андрій Спірідонов. Всі права захищені.</footer>
+
+    <script>
+      // Захист коду сторінки та блокування інспектора
+      document.onkeydown = function (e) {
+        if (
+          e.ctrlKey &&
+          (e.keyCode === 83 ||
+            e.keyCode === 85 ||
+            e.keyCode === 123 ||
+            e.keyCode === 73)
+        ) {
+          return false;
+        }
+      };
+
+      // Логіка для кнопки заставки першого відео + розгортання на весь екран
+      const overlay = document.getElementById("videoOverlay");
+      const firstContainer = document.getElementById("first-video-container");
+      if (overlay && firstContainer) {
+        const firstVideo = firstContainer.querySelector("video");
+        overlay.addEventListener("click", () => {
+          overlay.style.opacity = "0";
+          setTimeout(() => {
+            overlay.style.display = "none";
+          }, 400);
+
+          if (firstVideo) {
+            firstVideo.play();
+
+            // Автоматичний перехід у повноекранний режим при кліку
+            if (firstVideo.requestFullscreen) {
+              firstVideo.requestFullscreen();
+            } else if (firstVideo.webkitRequestFullscreen) {
+              /* Safari */
+              firstVideo.webkitRequestFullscreen();
+            } else if (firstVideo.msRequestFullscreen) {
+              /* IE11 */
+              firstVideo.msRequestFullscreen();
+            }
+          }
+        });
+      }
+
+      // Обробка всіх відеоконтейнерів
+      document
+        .querySelectorAll(".video-container")
+        .forEach((container, index) => {
+          const video = container.querySelector("video");
+
+          // Для першого відео не застосовуємо зупинку за 0.8с до кінця (воно з петлею/loop)
+          if (index === 0) {
+            return;
+          }
+
+          // Зупинка відео за 0.8 сек до кінця на потрібному кадрі (для всіх наступних відео)
+          video.addEventListener("timeupdate", () => {
+            if (video.duration && video.currentTime >= video.duration - 0.8) {
+              video.pause();
+              video.currentTime = video.duration - 0.8;
+            }
+          });
+
+          // Якщо відео додивилися до кінця і знову тиснуть плей — воно почнеться спочатку
+          video.addEventListener("play", () => {
+            if (video.currentTime >= video.duration - 0.85) {
+              video.currentTime = 0;
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
