@@ -154,7 +154,7 @@ function initPortfolio() {
         vBody.append(i);
       });
 
-    // Додаємо відео: для кейсу Nexus розміщуємо обидва відео поруч (по 45%)
+    // Додаємо відео: для кейсу Nexus розміщуємо обидва відео поруч (по 45%) з кнопками керування та зацикленням
     if (el.dataset.video) {
       const videoList = (el.dataset.video || "").split("|").filter(Boolean);
 
@@ -166,11 +166,15 @@ function initPortfolio() {
         videoList.forEach((src) => {
           const v = document.createElement("video");
           v.src = src;
-          v.autoplay = v.loop = v.muted = v.playsInline = true;
-          v.setAttribute("muted", "");
+          v.autoplay = true;
+          v.loop = true;
+          v.muted = true;
+          v.playsInline = true;
+          v.controls = true;
+          v.setAttribute("controls", "controls");
           v.draggable = false;
           v.style.cssText =
-            "width: 45%; min-width: 250px; height: auto; display: block;";
+            "width: 45%; min-width: 250px; height: auto; display: block; pointer-events: auto;";
           videoContainer.append(v);
         });
         vBody.append(videoContainer);
