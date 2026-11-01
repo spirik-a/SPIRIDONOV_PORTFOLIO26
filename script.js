@@ -1,7 +1,6 @@
 // ==========================================
 // 1. ЗАХИСТ КОНТЕНТУ (ANTI-THEFT)
 // ==========================================
-// Режим розробника: відкрий index.html?dev, щоб вимкнути захист (для F12) і бачити помилки на екрані
 const DEV = /[?&]dev\b/.test(location.search);
 if (DEV) {
   const box = document.createElement("div");
@@ -62,38 +61,7 @@ if (!DEV) {
 }
 
 // ==========================================
-// 2. ЛОАДЕР (легкий: чекає лише на базові ресурси)
-// ==========================================
-(function () {
-  const screen = document.getElementById("loading-screen");
-  const pct = document.getElementById("percent");
-  const bar = document.getElementById("progress-bar");
-  let p = 0;
-  let finished = false;
-  const set = (v) => {
-    pct.textContent = Math.round(v) + "%";
-    bar.style.width = v + "%";
-  };
-  const tick = setInterval(() => {
-    p = Math.min(p + Math.random() * 14, 90);
-    set(p);
-  }, 120);
-  function finish() {
-    if (finished) return;
-    finished = true;
-    clearInterval(tick);
-    set(100);
-    setTimeout(() => {
-      screen.classList.add("done");
-      document.body.classList.remove("loading");
-    }, 350);
-  }
-  window.addEventListener("load", finish);
-  setTimeout(finish, 4000); // страховка
-})();
-
-// ==========================================
-// 3. ФІЛЬТРИ, ПЕРЕГЛЯД КЕЙСІВ, КНОПКА "ВГОРУ"
+// 2. ЛОАДЕР ТА ІНТЕРАКТИВНІСТЬ ПОРТФОЛІО
 // ==========================================
 function initPortfolio() {
   const viewer = document.getElementById("viewer");
@@ -104,7 +72,6 @@ function initPortfolio() {
   let lastFocus = null;
 
   try {
-    // Якщо мініатюра відсутня, показуємо повну картинку кейсу
     document.querySelectorAll(".card img").forEach((img) => {
       const useFull = () => {
         const full = (img.closest(".card").dataset.imgs || "").split("|")[0];
@@ -114,7 +81,6 @@ function initPortfolio() {
       if (img.complete && img.naturalWidth === 0) useFull();
     });
 
-    // Захист: ніяких перетягувань медіа
     document
       .querySelectorAll("img,video")
       .forEach((m) => (m.draggable = false));
@@ -136,6 +102,7 @@ function initPortfolio() {
     vBody.innerHTML = "";
     vTitle.textContent = el.dataset.title || "";
     vBody.classList.toggle("gap", el.hasAttribute("data-gap"));
+
     if (el.dataset.extra) {
       const t = document.getElementById(el.dataset.extra);
       if (t) vBody.append(t.content.cloneNode(true));
@@ -154,7 +121,7 @@ function initPortfolio() {
         vBody.append(i);
       });
 
-    // Додаємо відео: для кейсу Nexus розміщуємо обидва відео поруч (по 45%) з кнопками керування та зацикленням
+    // Додаємо відео з урахуванням конфігурації для Nexus (по 45% поруч)
     if (el.dataset.video) {
       const videoList = (el.dataset.video || "").split("|").filter(Boolean);
 
@@ -182,9 +149,15 @@ function initPortfolio() {
         videoList.forEach((src) => {
           const v = document.createElement("video");
           v.src = src;
-          v.autoplay = v.loop = v.muted = v.playsInline = true;
-          v.setAttribute("muted", "");
+          v.autoplay = true;
+          v.loop = true;
+          v.muted = true;
+          v.playsInline = true;
+          v.controls = true;
+          v.setAttribute("controls", "controls");
           v.draggable = false;
+          v.style.cssText =
+            "width: 100%; height: auto; display: block; pointer-events: auto;";
           vBody.append(v);
         });
       }
@@ -195,6 +168,7 @@ function initPortfolio() {
     vBody.scrollTop = 0;
     vClose.focus();
   }
+
   function closeCase() {
     viewer.hidden = true;
     vBody.innerHTML = "";
@@ -208,21 +182,51 @@ function initPortfolio() {
     const c = e.target.closest("[data-imgs],[data-video]");
     if (c && !viewer.contains(c)) openCase(c);
   });
+
   vClose.addEventListener("click", closeCase);
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !viewer.hidden) closeCase();
   });
 
+  // Кнопка завантаження прогресу
+  const screen = document.getElementById("loading-screen");
+  const pct = document.getElementById("percent");
+  const bar = document.getElementById("progress-bar");
+  let p = 0;
+  let finished = false;
+  const set = (v) => {
+    if (pct) pct.textContent = Math.round(v) + "%";
+    if (bar) bar.style.width = v + "%";
+  };
+  const tick = setInterval(() => {
+    p = Math.min(p + Math.random() * 14, 90);
+    set(p);
+  }, 120);
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    clearInterval(tick);
+    set(100);
+    setTimeout(() => {
+      if (screen) screen.classList.add("done");
+      document.body.classList.remove("loading");
+    }, 350);
+  }
+  window.addEventListener("load", finish);
+  setTimeout(finish, 4000);
+
   // Кнопка "Вгору"
   window.addEventListener("scroll", () => {
-    toTop.style.display = window.scrollY > 800 ? "flex" : "none";
+    if (toTop) toTop.style.display = window.scrollY > 800 ? "flex" : "none";
   });
-  toTop.addEventListener("click", () =>
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  );
+  if (toTop) {
+    toTop.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    );
+  }
 }
 
-// Запускаємо одразу, якщо DOM уже готовий (інакше після DOMContentLoaded)
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initPortfolio);
 } else {
